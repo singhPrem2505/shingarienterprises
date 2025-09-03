@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shingari Enterprises</title>
+    <link rel="website icon" type="png" href="./logo.png" >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body{
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.5;
+      }
+      .navbar {
+        height: 9vh;
+        width: 100%;
+        z-index: 9999;
+        background-color: white;
+        border: 1.3px solid rgb(185, 181, 181);
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+      }
+      .logo {
+        height: auto;
+        width: 20vw;
+        display: flex;
+        align-items: center;
+      }
+      .logo p {
+        height: auto;
+        width: 20vw;
+        margin-top: 1vh;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.845);
+      }
+      #logoid {
+        height: auto;
+        width: 6.5vw;
+        padding: auto;
+      }
+      .links {
+        margin: auto;
+        margin-left: 45vw;
+      }
+      #a {
+        text-decoration: none;
+        margin: 1.1vw;
+        color: grey;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #free {
+        border: none;
+        width: 10vw;
+        height: 6vh;
+        border-radius: 6.4px;
+        color: #2b7b24;
+        background-color: #f3e442;
+        font-size: 1.05vw;
+        font-family: "Segoe UI";
+        font-weight: 550;
+        margin-left: 2.5vw;
+      }
+      #free:active {
+        background-color: #f3e4428c;
+        color: #2b7b2496;
+      }
+      .img {
+        background-image: url("/home.png");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .img p {
+        color: #1b6e14;
+        padding: 1.3vw;
+      }
+      #transform {
+        color: rgb(81, 79, 79);
+        margin-bottom: 3vw;
+        text-align: center;
+        width: 47vw;
+      }
+      .specification {
+        margin: 2vw;
+        display: flex;
+      }
+      .specs {
+        margin: 2vw;
+        width: 14vw;
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 1.05vh;
+        box-shadow: -1vh 1vh 1vh rgba(0, 0, 0, 0.1),
+          1vh 1vh 1vh rgba(0, 0, 0, 0.1), 0px 2vh 2.5vh rgba(0, 0, 0, 0.15);
+      }
+      #specsh4 {
+        color: #19920e;
+        font-size: 1.6vw;
+      }
+      #specsp {
+        color: rgb(35, 34, 34);
+        padding: 1vh;
+      }
+      .img button {
+        border: none;
+        width: 15vw;
+        height: 6vh;
+        border-radius: 6.7px;
+        color: #2b7b24;
+        background-color: #f3e442;
+        font-size: 1.13vw;
+        font-family: "Segoe UI";
+        font-weight: 550;
+        cursor: pointer;
+      }
+      .img button:active {
+        background-color: #f3e4428c;
+        color: #2b7b2496;
+      }
+      .services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .services p {
+        color: rgb(60, 57, 57);
+        padding: 1.9vw 1.9vw 1.9vw 1vw;
+      }
+      #servicesline {
+        color: rgb(92, 92, 92);
+        margin-bottom: 3vw;
+        text-align: center;
+        width: 47vw;
+      }
+
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3.2vw;
+        max-width: 75vw;
+        margin: auto;
+      }
+      .card {
+        height: 55vh;
+        width: 22vw;
+        border-radius: 1vw;
+        box-shadow: -1vh 1vh 1vh rgba(0, 0, 0, 0.1),
+          1vh 1vh 1vh rgba(0, 0, 0, 0.1), 0px 2vh 2.5vh rgba(0, 0, 0, 0.15);
+
+        box-sizing: border-box;
+        padding: 1.4vw;
+        transition: transform 0.3s ease;
+      }
+      .card:hover {
+        transform: scale(1.05);
+      }
+      .cards p {
+        padding-top: 1.07vw;
+        padding-bottom: 1.07vw;
+      }
+      .icon {
+        background-color: #2b7b24;
+        width: 3.8vw;
+        height: 3.8vw;
+        border-radius: 1.05vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .icon-expertise {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .icon i {
+        font-size: 2.1vw;
+        color: #f3e442;
+      }
+      #expertise {
+        background-color: #2b7b24;
+        font-size: 0.9vw;
+        padding: 0;
+        color: #f3e442;
+        min-width: 3.9vw;
+        height: 1.5vw;
+        border-radius: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #tag {
+        color: black;
+        padding: 0;
+        padding-top: 1.15vw;
+        padding-bottom: 1.15vw;
+      }
+      #explain {
+        padding: 0;
+        font-size: 1.17vw;
+      }
+      #explainextra {
+        font-size: 1vw;
+        color: rgb(60, 57, 57);
+        padding: 5.6vh 0 0 1.2vw;
+      }
+      #explainextra li::marker {
+        color: #2b7b24;
+        font-size: 1.2vw;
+      }
+      .consultation {
+        background-image: url("/consultation.png");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        max-width: 90vw;
+        margin: 5vh auto;
+        padding: 5vh 5vw;
+
+        border-radius: 1.2vh;
+        text-align: center;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #ready {
+        padding: 0;
+        margin: 0;
+        margin-top: 3.1vh;
+        font-weight: 530;
+        color: white;
+      }
+      #line {
+        padding: 0;
+        margin: 0;
+        margin-top: 3.4vh;
+
+        color: rgb(253, 253, 253);
+        width: 52vw;
+        text-align: center;
+      }
+      #free-consult {
+        border: none;
+        width: 16vw;
+        height: 7vh;
+        border-radius: 6.7px;
+        color: #2b7b24;
+        background-color: #f3e442;
+        font-size: 1.1vw;
+        font-family: "Segoe UI";
+        font-weight: 550;
+        margin-top: 2.3vh;
+        cursor: pointer;
+      }
+      #free-consult:active {
+        background-color: #f3e4428c;
+        color: #2b7b2496;
+      }
+      .about {
+        background-color: rgb(248, 248, 248);
+        padding: 1vw 0 4vw 0;
+      }
+      .knowledge {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .written {
+        width: 31vw;
+        padding: 3vw;
+      }
+      #leading {
+        padding: 1.7vw;
+        color: black;
+      }
+      #over8 {
+        font-size: 1.25vw;
+        color: rgb(96, 96, 96);
+        line-height: 1.6;
+      }
+      #affordable {
+        margin-top: 1.9vw;
+        font-size: 1.1vw;
+        color: rgb(96, 96, 96);
+      }
+      .site {
+        width: 35vw;
+        padding: 3vw;
+      }
+      .site img {
+        width: 35vw;
+        height: auto;
+        border-radius: 1.2vw;
+      }
+      .completed {
+        padding-top: 1.5vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1vw;
+        max-width: 35vw;
+        margin: auto;
+      }
+      .complete {
+        width: 16vw;
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 2vh;
+        box-shadow: -0.3vh 0.3vh 2vh rgba(0, 0, 0, 0.06),
+          0.3vh 0.3vh 1vh rgba(0, 0, 0, 0.06),
+          0px 1.1vh 2.5vh rgba(0, 0, 0, 0.15);
+      }
+      .complete i {
+        font-size: 1.35vw;
+        padding: 1vh;
+      }
+      #complh4 {
+        color: black;
+        font-size: 1.25vw;
+        font-weight: 400;
+      }
+      #complp {
+        color: rgb(96, 96, 96);
+        font-size: 1vw;
+      }
+      .certificate {
+        padding-top: 1.5vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5vw;
+        max-width: 90vw;
+        margin: auto;
+      }
+      .certi {
+        width: 20vw;
+        height: 35vh;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 2vh;
+        box-shadow: -0.3vh 0.3vh 2vh rgba(0, 0, 0, 0.06),
+          0.3vh 0.3vh 1vh rgba(0, 0, 0, 0.06),
+          0px 1.1vh 2.5vh rgba(0, 0, 0, 0.15);
+      }
+      .certi i {
+        font-size: 2vw;
+        padding: 1vh;
+        border-radius: 50px;
+        width: 3vw;
+        height: 3vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #certih4 {
+        color: black;
+        font-size: 1.25vw;
+        font-weight: 400;
+      }
+      #certip {
+        color: rgb(96, 96, 96);
+        font-size: 1.1vw;
+        padding: 1vw 2vw 0 2vw;
+      }
+      footer {
+        background-color: #111827;
+        height: 55vh;
+        width: 100%;
+      }
+      .footertabs {
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+        display: flex;
+        justify-content: center;
+      }
+      footer a {
+        text-decoration: none;
+        color: rgb(156, 155, 155);
+        font-size: 1.15vw;
+        margin-bottom: 1.4vh;
+      }
+      footer p {
+        color: white;
+        font-size: 1.2vw;
+        margin-bottom: 1.45vw;
+      }
+      .footlogo img {
+        height: auto;
+        width: 5vw;
+        border-radius: 3vw;
+      }
+      .footlogo {
+        width: 20vw;
+      }
+      .logoname {
+        width: 15vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logoname p {
+        margin-left: 1.2vh;
+      }
+      #leading {
+        color: rgb(156, 155, 155);
+        font-size: 1.15vw;
+      }
+      .servicetab {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1.6vw;
+        margin-right: 3vw;
+      }
+      .companytab {
+        display: flex;
+        flex-direction: column;
+        margin-right: 5vw;
+      }
+      .contacttab {
+        display: flex;
+        flex-direction: column;
+      }
+      .contacttab i {
+        font-size: 1.3vw;
+      }
+      .copyright {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2.5vw;
+        color: whitesmoke;
+        margin: 1.3vh auto;
+      }
+      .centered-line {
+        width: 80%;
+        margin: 2vh auto;
+        border: none;
+        border-top: 2px solid #2b7b24;
+      }
+      /* Keep hamburger fixed so it doesn't move */
+.hamburger {
+display: none;
+  position: fixed;   /* NEW */
+  top: 20px;         /* adjust as needed */
+  right: 20px;       /* adjust as needed */
+  z-index: 1100;     /* above menu */
+}
+
+/* Animate hamburger to X on open */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(50vw, 40vh);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+.hamburger span {
+  transition: 0.3s ease; /* smooth */
+}
+
+/* Slide menu from right instead of pushing page */
+.sidepage {
+  position: fixed;     /* NEW */
+  top: 0;
+  right: -250px;       /* start hidden */
+  height: 100%;
+  width: 250px;
+  transition: right 0.3s ease;
+  z-index: 1050;
+}
+
+.sidepage.open {
+  right: 0; /* visible */
+}
+
+    
+      .links.show {
+        display: flex !important;
+        flex-direction: column;
+        padding-top: 2vh;
+        align-items: center;
+        height: 20vh;
+        margin-right: 10vw;
+        margin-top: 8vh;
+        background-color: white;
+      }
+      @media only screen and (max-width: 755px) {
+        .navbar {
+          height: 8vh;
+          width: 100%;
+        }
+
+        .logo {
+          width: 60%;
+          display: flex;
+          align-items: center;
+        }
+
+        .hamburger {
+          display: block;
+          margin: auto 2vw;
+          font-size: 7vw;
+          align-self: flex-end;
+        }
+
+        .logo img,
+        #logoid {
+          width: 20vw;
+        }
+
+        .logo p {
+          font-size: 4.3vw;
+          width: 40vw;
+          margin-top: 0;
+        }
+
+        .links {
+          display: none;
+          margin: 10px auto;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .links a {
+          text-align: center;
+          width: 100%;
+          font-size: 4.85vw;
+          padding: 2vw 5vw;
+        }
+        #free {
+          display: none;
+          margin-top: 12vw;
+          width: 28vw;
+          height: 15vw;
+          font-size: 4.4vw;
+        }
+        .img {
+          height: 100vh;
+          width: 105vw;
+        }
+        .img p {
+          padding-top: 6vh;
+          width: 97vw;
+          text-align: center;
+          font-size: 1.7vh;
+        }
+        #transform {
+          padding: 0;
+          padding-top: 2vh;
+          line-height: 1.57;
+          width: 90vw;
+          font-size: 1.8vh;
+        }
+
+        .img button {
+          width: 50%;
+          font-size: 4vw;
+          height: 5vh;
+          padding: 8px;
+          margin: 20px 0;
+        }
+
+        .specification {
+          flex-direction: column;
+          align-items: center;
+        }
+        #specsh4 {
+          color: #19920e;
+          font-size: 5.6vw;
+        }
+        .specs {
+          width: 90vw;
+          height: 13vh;
+          margin-bottom: 20px;
+        }
+
+        .cards {
+          flex-direction: column;
+          align-items: center;
+          max-width: 80vw;
+        }
+        .services p {
+          padding: 1vw;
+          margin-top: 3vh;
+          font-size: 4.3vw;
+          text-align: center;
+        }
+        #servicesline {
+          width: 94vw;
+          font-size: 2vh;
+          text-align: center;
+        }
+        .card {
+          width: 87vw;
+          height: auto;
+          margin: 3vh 0;
+          border-radius: 12px;
+        }
+        .card:hover {
+          transform: none;
+        }
+        .icon {
+          width: 6vh;
+          height: 6vh;
+          margin-top: 3vh;
+          margin-left: 2vh;
+        }
+        .icon i {
+          font-size: 3vh;
+        }
+        #expertise {
+          font-size: 2.1vw;
+          width: 8vw;
+          height: auto;
+          padding: 4px 10px;
+          margin-right: 1vw;
+        }
+
+        #tag {
+          text-align: start;
+          margin: 0;
+          margin-top: 1.5vh;
+          margin-left: 2vh;
+          margin-bottom: 1vh;
+          font-size: 4.6vw;
+        }
+        #explain {
+          font-size: 3.6vw;
+          margin: 0;
+          text-align: start;
+          margin-left: 2vh;
+          margin-right: 1.5vh;
+        }
+
+        #explainextra {
+          padding: 0;
+          padding-top: 3.5vh;
+          font-size: 3.4vw;
+          margin: 0;
+          margin-left: 3vh;
+          padding-bottom: 1.5vh;
+        }
+        #explainextra li::marker {
+          color: #2b7b24;
+          font-size: 2.4vh;
+        }
+
+        .consultation {
+          margin-left: 8vw;
+          padding: 4vh 5vw;
+        }
+
+        #ready {
+          margin: 0;
+          width: 97vw;
+        }
+        #line {
+          font-size: 3.5vw;
+          width: 80vw;
+        }
+
+        #free-consult {
+          width: 78vw;
+          font-size: 3.5vw;
+          padding: 8px;
+          height: auto;
+        }
+        .about {
+          width: 105vw;
+        }
+        .knowledge {
+          flex-direction: column;
+        }
+        #leading {
+          margin: 0;
+          padding: 0;
+          padding-bottom: 2vh;
+          font-size: 1.9vh;
+          margin-top: 4vh;
+          color: black;
+        }
+        #over8 {
+          font-size: 1.7vh;
+          width: 94%;
+          color: rgb(96, 96, 96);
+          line-height: 1.6;
+        }
+        #affordable {
+          margin-top: 1.7vh;
+          width: 94%;
+          font-size: 1.6vh;
+          color: rgb(96, 96, 96);
+        }
+        .written,
+        .site {
+          width: 90vw;
+          padding: 10px;
+        }
+        .site img {
+          padding: 0;
+          margin: 0;
+          width: 91vw;
+          height: auto;
+          border-radius: 1.5vw;
+        }
+        .completed {
+          padding-top: 3vw;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 4vw;
+          max-width: 95vw;
+          margin: auto;
+        }
+        .complete {
+          width: 40vw;
+          height: 15vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          border-radius: 2vh;
+          box-shadow: -0.3vh 0.3vh 2vh rgba(0, 0, 0, 0.06),
+            0.3vh 0.3vh 1vh rgba(0, 0, 0, 0.06),
+            0px 1.1vh 2.5vh rgba(0, 0, 0, 0.15);
+        }
+        .complete i {
+          font-size: 5vw;
+          padding: 2vh;
+        }
+        #complh4 {
+          color: black;
+          font-size: 4vw;
+          font-weight: 400;
+        }
+        #complp {
+          color: rgb(96, 96, 96);
+          font-size: 3vw;
+        }
+        .certificate {
+          margin-top: 8vh;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .certi {
+          padding: 0;
+          margin: 0;
+          width: 91vw;
+          height: 20vh;
+          margin-bottom: 15px;
+        }
+        .certi i {
+          font-size: 6vw;
+          padding: 1vh;
+          border-radius: 50px;
+          margin-bottom: 2.5vh;
+          width: 7vw;
+          height: 7vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        #certih4 {
+          color: black;
+          font-size: 3.5vw;
+          font-weight: 400;
+        }
+        #certip {
+          text-align: center;
+          width: 65vw;
+          color: rgb(96, 96, 96);
+          font-size: 3vw;
+          padding: 1vw 2vw 0 2vw;
+        }
+        footer {
+          background-color: #111827;
+          height: auto;
+          width: 105vw;
+        }
+        .footertabs {
+          padding-top: 4vw;
+          padding-bottom: 2vw;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-left: 5.3vw;
+        }
+        footer a {
+          margin: 0;
+          padding: 0;
+          margin-top: 1.5vw;
+          text-decoration: none;
+          color: rgb(156, 155, 155);
+          font-size: 3.6vw;
+        }
+        footer p {
+          color: white;
+          font-size: 4vw;
+          margin-bottom: 1.45vw;
+        }
+        .footlogo img {
+          height: auto;
+          width: 11vw;
+          border-radius: 3vw;
+        }
+        .footlogo {
+          width: 70vw;
+        }
+        .logoname {
+          width: 70vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .logoname p {
+          margin-left: 1.2vh;
+          font-size: 3vh;
+        }
+        #leading {
+          margin: 0;
+          padding: 0;
+          margin-top: 1vh;
+          color: rgb(156, 155, 155);
+          font-size: 3vw;
+        }
+        .servicetab {
+          margin: 0;
+          padding: 0;
+          margin-top: 1.8vh;
+          display: flex;
+          flex-direction: column;
+        }
+        .companytab {
+          margin: 0;
+          padding: 0;
+          margin-top: 2vh;
+          display: flex;
+          flex-direction: column;
+          margin-right: 5vw;
+        }
+        .contacttab {
+          margin: 0;
+          padding: 0;
+          margin-top: 2vh;
+          display: flex;
+          flex-direction: column;
+        }
+        .contacttab i {
+          font-size: 2vh;
+        }
+        .copyright {
+          margin: 0;
+          padding: 0;
+          padding-bottom: 3vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 2.5vw;
+          color: whitesmoke;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">
+          <img id="logoid" src="/logo.png" alt="image_not_available" />
+          <p>Shingari Enterprises</p>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+          <i class="fa fa-bars"></i>
+        </div>
+        
+        <nav class="links" id="nav-links">
+          <a id="a" href="#home">Home</a>
+          <a id="a" href="#services">Services</a>
+          <a id="a" href="#about">About</a>
+          <button id="free">Free Consultation</button>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="img" id="home">
+        <p>Power Your Home with Premium Solar Rooftop Systems</p>
+        <p id="transform">
+          Transform your rooftop into a clean energy powerhouse. Our expert team
+          designs, installs, and maintains premium solar systems that reduce
+          your electricity bills by up to 90% while increasing your property
+          value.
+        </p>
+        <button onclick="location.href='/consultation'">
+          Get Free Quote
+          <i class="fa-solid fa-arrow-right" style="color: #2b7b24;margin-left:15px;"></i>
+        </button>
+        <div class="specification">
+          <div class="specs 1">
+            <h4 id="specsh4">25+</h4>
+            <p id="specsp">Years Warranty</p>
+          </div>
+          <div class="specs 2">
+            <h4 id="specsh4">90%</h4>
+            <p id="specsp">Bill Reduction</p>
+          </div>
+          <div class="specs 3">
+            <h4 id="specsh4">100+</h4>
+            <p id="specsp">Homes Powered</p>
+          </div>
+        </div>
+      </div>
+      <div class="services" id="services">
+        <p>Complete Solar Rooftop Solutions</p>
+        <p id="servicesline">
+          From initial consultation to long-term maintenance, we provide
+          end-to-end solar solutions that maximize your energy savings and
+          environmental impact.
+        </p>
+        <div class="cards">
+          <div class="card 1">
+            <div class="icon-expertise">
+              <div class="icon">
+                <i class="fa-solid fa-sun"></i>
+              </div>
+              <p id="expertise">Popular</p>
+            </div>
+
+            <p id="tag">Custom System Design</p>
+            <p id="explain">
+              Tailored solar solutions designed specifically for your roof and
+              energy needs.
+            </p>
+            <ul id="explainextra">
+              <li>3D Roof Analysis</li>
+              <li>Energy Assessment</li>
+              <li>Custom Layout Design</li>
+            </ul>
+          </div>
+          <div class="card 2">
+            <div class="icon-expertise">
+              <div class="icon">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <p id="expertise">Expert</p>
+            </div>
+
+            <p id="tag">Professional Installation</p>
+            <p id="explain">
+              Expert installation by certified technicians with minimal
+              disruption to your home.
+            </p>
+            <ul id="explainextra">
+              <li>Certified Installers</li>
+              <li>Code Compliance</li>
+            </ul>
+          </div>
+          <div class="card 3">
+            <div class="icon-expertise">
+              <div class="icon">
+                <i class="fa-solid fa-wrench"></i>
+              </div>
+              <p id="expertise">Essential</p>
+            </div>
+
+            <p id="tag">Maintenance & Support</p>
+            <p id="explain">
+              Comprehensive maintenance plans to keep your solar system running
+              at peak performance.
+            </p>
+            <ul id="explainextra">
+              <li>Annual Inspections</li>
+              <li>Performance Monitoring</li>
+              <li>24/7 Support</li>
+            </ul>
+          </div>
+          <div class="card 4">
+            <div class="icon-expertise">
+              <div class="icon">
+                <i class="fa-solid fa-credit-card"></i>
+              </div>
+              <p id="expertise">Flexible</p>
+            </div>
+
+            <p id="tag">Financing Options</p>
+            <p id="explain">
+              Flexible financing solutions including zero-down options and solar
+              loans.
+            </p>
+            <ul id="explainextra">
+              <li>Zero Down Payment</li>
+              <li>Solar Loans</li>
+              <li>Lease Options</li>
+            </ul>
+          </div>
+          <div class="card 5">
+            <div class="icon-expertise">
+              <div class="icon">
+                <i class="fa-solid fa-shield"></i>
+              </div>
+              <p id="expertise">Protected</p>
+            </div>
+
+            <p id="tag">Warranty & Insurance</p>
+            <p id="explain">
+              Comprehensive warranty coverage and insurance protection for your
+              investment.
+            </p>
+            <ul id="explainextra">
+              <li>25-Year Warranty</li>
+              <li>Performance Guarantee</li>
+            </ul>
+          </div>
+          <div class="card 6">
+            <div class="icon-expertise">
+              <div class="icon">
+                <i class="fa-solid fa-chart-column"></i>
+              </div>
+              <p id="expertise">Smart</p>
+            </div>
+
+            <p id="tag">Performance Monitoring</p>
+            <p id="explain">
+              Real-time monitoring and analytics to track your system's
+              performance and savings
+            </p>
+            <ul id="explainextra">
+              <li>Real-time Monitoring</li>
+              <li>Mobile App</li>
+              <li>Performance Reports</li>
+            </ul>
+          </div>
+        </div>
+        <div class="consultation" id="conso">
+          <p id="ready">Ready to Go Solar?</p>
+          <p id="line">
+            Get started with a free consultation and custom quote. Our solar
+            experts will assess your roof, energy usage, and provide a detailed
+            proposal tailored to your needs.
+          </p>
+          <button onclick="location.href='/consultation'" id="free-consult">Schedule Free Consultation</button>
+        </div>
+      </div>
+      <div class="about" id="about">
+        <div class="knowledge">
+          <div class="written">
+            <p id="leading">Leading Solar Installation Experts Since 2015</p>
+            <p id="over8">
+              With over 8 years of experience in solar energy, we've helped
+              thousands of homeowners transition to clean, renewable energy. Our
+              NABCEP-certified installers and cutting-edge technology ensure
+              your solar system delivers maximum performance and savings.
+            </p>
+            <p id="affordable">
+              We're committed to making solar accessible and affordable for
+              everyone. From initial consultation to system monitoring, we're
+              with you every step of the way on your renewable energy journey.
+            </p>
+          </div>
+          <div class="site">
+            <img src="/solar.jpg" />
+            <div class="completed">
+              <div class="complete 1">
+                <i class="fa-solid fa-house" style="color: #be3b10"></i>
+                <h4 id="complh4">100+</h4>
+                <p id="complp">Homes Powered</p>
+              </div>
+              <div class="complete 2">
+                <i class="fa-solid fa-solar-panel" style="color: #0e7592"></i>
+                <h4 id="complh4">75,000kWh+</h4>
+                <p id="complp">Green Energy Saved</p>
+              </div>
+              <div class="complete 3">
+                <i
+                  class="fa-solid fa-bolt-lightning"
+                  style="color: #054eae"
+                ></i>
+                <h4 id="complh4">15MW+</h4>
+                <p id="complp">Total Capacity</p>
+              </div>
+              <div class="complete 4">
+                <i class="fa-solid fa-leaf" style="color: #19920e"></i>
+                <h4 id="complh4">50k+</h4>
+                <p id="complp">Tons CO<sub>2</sub> Saved</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="certificates">
+          <div class="certificate">
+            <div class="certi 1">
+              <i
+                class="fa-solid fa-ribbon"
+                style="color: #be3b10; background-color: #f5cec1"
+              ></i>
+              <h4 id="certih4">Certified Excellence</h4>
+              <p id="certip">
+                Verified and Registered vendor at National Portal and DHBVN
+              </p>
+            </div>
+            <div class="certi 2">
+              <i
+                class="fa-solid fa-shield"
+                style="color: #054eae; background-color: #b1d0f8"
+              ></i>
+              <h4 id="certih4">Premium Quality</h4>
+              <p id="certip">
+                Top-tier solar panels and components with industry-leading
+                warranties
+              </p>
+            </div>
+            <div class="certi 3">
+              <i
+                class="fa-solid fa-leaf"
+                style="color: #19920e; background-color: #bafab4"
+              ></i>
+              <h4 id="certih4">Environmental Impact</h4>
+              <p id="certip">
+                Help reduce carbon footprint and create a sustainable future
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footertabs">
+        <div class="footlogo">
+          <div class="logoname">
+            <img src="/logo.png" />
+            <p>Shingari Enterprises</p>
+          </div>
+
+          <p id="leading">
+            Leading solar rooftop installation company helping to save money
+            with clean energy.
+          </p>
+        </div>
+        <div class="servicetab">
+          <p>Services</p>
+          <a href="/consultation">Solar Installation</a>
+          <a href="/consultation">System Design</a>
+          <a href="/consultation">Maintenance</a>
+          <a href="/consultation">Financing</a>
+        </div>
+        <div class="companytab">
+          <p>Company</p>
+          <a href="#about">About Us</a>
+          <a href="#home">Our Team</a>
+          <a href="#home">Blog</a>
+        </div>
+        <div class="contacttab">
+          <p>Contact</p>
+          <a
+            href="mailto:sesolarpower@gmail.com?subject=Solar%20Quote%20Request&body=Hello,%20I%20would%20like%20to%20know%20more%20about%20your%20solar%20services."
+            id="email-tab"
+          >
+            <i class="fa-solid fa-envelope" style="color: #2ac448"></i>
+            sesolarpower@gmail.com
+          </a>
+          <a
+            href="https://www.google.com/maps?q=Shingari+Enterprises,+Ellenabad,+Sirsa,+Haryana,+India"
+            target="_blank"
+            id="map-address"
+          >
+            <i class="fa-solid fa-location-dot" style="color: #2ac448"></i>
+            Talwara Road, Ellenabad, Sirsa, Haryana- 125102
+          </a>
+          <a style="color: white;"><b>GST No.-</b>  06CEEPS8291F1Z4</a>
+        </div>
+      </div>
+      <hr class="centered-line" />
+      <div class="copyright">
+        <p>&copy; 2025 Shingari Enterprises. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      document.querySelector("#free").addEventListener("click", () => {
+        window.location.hash = "#conso";
+      });
+
+      function toggleMenu() {
+        const navLinks = document.getElementById("nav-links");
+        navLinks.classList.toggle("show");
+      }
+
+      // Optional: auto-close menu when a link is clicked (for better UX)
+      document.querySelectorAll("#nav-links a").forEach((link) =>
+        link.addEventListener("click", () => {
+          document.getElementById("nav-links").classList.remove("show");
+        })
+      );
+    </script>
+  </body>
+</html>
