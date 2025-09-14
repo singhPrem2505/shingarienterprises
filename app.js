@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 const port = 3000;
 const consumer = require("./models/consumer");
+import { Analytics } from "@vercel/analytics/next"
 
 mongoose.connect("mongodb://127.0.0.1:27017/Inquiry");
 app.use(express.json());
