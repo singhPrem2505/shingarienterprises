@@ -4,7 +4,10 @@ const app = express();
 const port = 3000;
 const consumer = require("./models/consumer");
 
-mongoose.connect("mongodb://127.0.0.1:27017/Inquiry");
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.error("MongoDB connection error:", err));
+
 app.use(express.json());
 app.use(express.static("public"));
 
